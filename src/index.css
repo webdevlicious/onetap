@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+
+  h1 { @apply text-h1; }
+  h2 { @apply text-h2; }
+  h3 { @apply text-h3; }
+  h4 { @apply text-h4; }
+  h5 { @apply text-h5; }
+  h6 { @apply text-h6; }
+
+  p { @apply text-body font-opensans; }
+
+  a {
+    @apply text-primary font-opensans font-semibold hover:text-primary-hover hover:underline;
+  }
+
+  blockquote {
+    @apply text-[18px] leading-[28px] font-opensans italic border-l-2 border-primary pl-5 py-2;
+  }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 36px; line-height: 44px; }
+    h2 { font-size: 30px; line-height: 38px; }
+    p { font-size: 14px; line-height: 22px; }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply font-montserrat font-semibold text-base leading-[22px] tracking-[0.5px] uppercase text-white 
+           bg-primary hover:bg-primary-hover transition-colors duration-200;
+  }
+}
